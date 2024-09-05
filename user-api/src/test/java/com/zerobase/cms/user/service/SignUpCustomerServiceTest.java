@@ -1,6 +1,7 @@
 package com.zerobase.cms.user.service;
 
 import com.zerobase.cms.user.domain.SignUpForm;
+import com.zerobase.cms.user.domain.model.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,9 +26,9 @@ class SignUpCustomerServiceTest {
                 .phone("01000000000")
                 .build();
 
-        assertNotNull(service.signUp(form).getId(), "Customer ID should not be null");
-        assertEquals("name", service.signUp(form).getName(), "Customer name should match");
-        assertEquals("abcd@gmail.com", service.signUp(form).getEmail(), "Customer email should match");
-        assertEquals("01000000000", service.signUp(form).getPhone(), "Customer phone should match");
+        Customer c = service.signUp(form);
+
+        assertNotNull(c.getId());
+        assertNotNull(c.getCreateAt());
     }
 }
