@@ -1,0 +1,46 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "email": "zero0577@naver.com",
+  "name": "myName",
+  "password": "pw",
+  "birth": "1991-10-12",
+  "phone": "010000000000"
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/customer/verify?email=zero0577@naver.com&code=MR6YG72tlO
+
+### 로그인 (고객)
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "zero0577@naver.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpNzlDMUlma3dNU2grcThldmR3PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MjU1ODQxMzIsImV4cCI6MTcyNTY3MDUzMn0.RcQ8T1MSBqKbEzR1WuALS-UXxkB36i6U76jQntABgRY
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpNzlDMUlma3dNU2grcThldmR3PSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MjU1ODQxMzIsImV4cCI6MTcyNTY3MDUzMn0.RcQ8T1MSBqKbEzR1WuALS-UXxkB36i6U76jQntABgRY
+
+{
+  "from": "server",
+  "message": "돈 충전",
+  "money": 50000
+}
+
+######################
+
+### 회원가입 (셀러)
+
+### 로그인 (셀러)
+
