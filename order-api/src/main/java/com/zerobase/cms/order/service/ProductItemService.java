@@ -29,7 +29,6 @@ public class ProductItemService {
         }
 
         ProductItem productItem = ProductItem.of(sellerId, form);
-        productItem = productItemRepository.save(productItem);
         product.getProductItems().add(productItem);
         return product;
     }
@@ -43,5 +42,13 @@ public class ProductItemService {
         productItem.setCount(form.getCount());
         productItem.setPrice(form.getPrice());
         return productItem;
+    }
+
+    @Transactional
+    public void deleteProductItem(Long sellerId, Long productItemId) {
+        ProductItem productItem = productItemRepository.findById(productItemId)
+                .filter(pi -> pi.getSellerId().equals(sellerId)).orElseThrow(
+                        () -> new CustomException(NOT_FOUND_ITEM));
+        productItemRepository.delete(productItem);
     }
 }

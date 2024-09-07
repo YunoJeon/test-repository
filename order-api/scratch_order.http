@@ -39,7 +39,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpN
   "items": [
     {
       "id": 1,
-      "name": "280",
+      "name": "290",
       "price": 100000,
       "count": 1
     }
@@ -57,3 +57,27 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpN
   "price": 100000,
   "count": 1
 }
+
+### 상품 식제
+DELETE http://localhost:8082/seller/product?id=1
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpNzlDMUlma3dNU2grcThldmR3PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzI1NjcwMTY3LCJleHAiOjE3MjU3NTY1Njd9.cHEijZ-m6M8BBExG7k4C3zRfFAotH20fAw0smQ27yE4
+
+{
+  "name": "나이키 에어포스 한정판",
+  "description": "상품 설명",
+  "id": 1,
+  "items": [
+    {
+      "id": 1,
+      "name": "280",
+      "price": 100000,
+      "count": 1
+    }
+  ]
+}
+
+### 상품 아이템 삭제
+DELETE http://localhost:8082/seller/product/item?id=2
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydUdxVjgrZWUrSWcwb1Nmc0NmZjIwOExpNzlDMUlma3dNU2grcThldmR3PSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzI1NjcwMTY3LCJleHAiOjE3MjU3NTY1Njd9.cHEijZ-m6M8BBExG7k4C3zRfFAotH20fAw0smQ27yE4
