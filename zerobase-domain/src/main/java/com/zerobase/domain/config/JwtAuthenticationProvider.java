@@ -7,14 +7,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 
-import javax.crypto.SecretKey;
 import java.util.Date;
+
 import java.util.Objects;
 
 public class JwtAuthenticationProvider {
-    private SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private String secretKey = "mysecretketisverylongsecretkeyiamstudyingzerobasebackend";
 
     private long toKenValidTime = 1000L * 60 * 60 * 24;
 
@@ -26,7 +25,7 @@ public class JwtAuthenticationProvider {
                 .setClaims(claims)
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + toKenValidTime))
-                .signWith(secretKey)
+                .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
 

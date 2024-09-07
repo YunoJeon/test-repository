@@ -23,7 +23,7 @@ public class SignInApplication {
 
     public String customerLoginToken(SignInForm form) {
         Customer c = customerService.findValidCustomer(
-                form.getEmail(), form.getPassword())
+                        form.getEmail(), form.getPassword())
                 .orElseThrow(() -> new CustomException(LOGIN_CHECK_FAIL));
         return provider.createToken(c.getEmail(), c.getId(), UserType.CUSTOMER);
     }
